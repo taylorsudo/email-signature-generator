@@ -52,7 +52,7 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
               >
                 <div
                   style={{
-                    fontWeight: '600',
+                    fontWeight: 'bold',
                     fontSize: '16px',
                     marginBottom: formData.title ? '0px' : '8px',
                   }}
