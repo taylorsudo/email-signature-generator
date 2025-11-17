@@ -103,7 +103,13 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
                   (icon) => icon.name || icon.iconUrl || icon.profileUrl
                 ) && (
                   <div
-                    style={{ marginTop: '12px', display: 'flex', gap: '8px', flexWrap: 'wrap' }}
+                    style={{
+                      marginTop: '12px',
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      gap: '8px',
+                      alignItems: 'center',
+                    }}
                   >
                     {formData.socialIcons.map((icon, index) => {
                       if (!icon.name && !icon.iconUrl && !icon.profileUrl) {
@@ -119,8 +125,7 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
                           style={{
                             width: '20px',
                             height: '20px',
-                            verticalAlign: 'middle',
-                            display: 'inline-block',
+                            display: 'block',
                           }}
                           crossOrigin="anonymous"
                         />
@@ -130,7 +135,6 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
                             color: '#0066cc',
                             textDecoration: 'none',
                             fontSize: '12px',
-                            marginRight: '4px',
                           }}
                         >
                           {icon.name || 'Social'}
@@ -138,13 +142,24 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
                       )
 
                       return (
-                        <span key={index} style={{ display: 'inline-flex' }}>
+                        <span
+                          key={index}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            minWidth: '20px',
+                            minHeight: '20px',
+                          }}
+                        >
                           {linkHref ? (
                             <a
                               href={linkHref}
                               style={{
                                 textDecoration: 'none',
-                                display: 'inline-block',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
                               }}
                             >
                               {content}

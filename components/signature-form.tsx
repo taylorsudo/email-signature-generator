@@ -131,14 +131,14 @@ export default function SignatureForm({
         <p className="text-sm text-muted-foreground -mt-2">
           Will show up as text links if icons are not provided.
         </p>
-        <div className="space-y-6">
+        <div className="space-y-4">
           {formData.socialIcons.map((icon, index) => (
-            <div key={index} className="space-y-4">
-              <div>
-                <Label
-                  htmlFor={`social${index}Name`}
-                  className="text-sm text-foreground"
-                >
+            <div
+              key={index}
+              className="rounded-lg border border-border p-4 sm:grid sm:grid-cols-3 sm:gap-4 space-y-4 sm:space-y-0"
+            >
+              <div className="space-y-1">
+                <Label htmlFor={`social${index}Name`} className="text-sm text-foreground">
                   Link Name {index + 1}
                 </Label>
                 <Input
@@ -146,17 +146,11 @@ export default function SignatureForm({
                   type="text"
                   placeholder="e.g., LinkedIn, Twitter"
                   value={icon.name}
-                  onChange={(e) =>
-                    onSocialChange(index, 'name', e.target.value)
-                  }
-                  className="mt-1"
+                  onChange={(e) => onSocialChange(index, 'name', e.target.value)}
                 />
               </div>
-              <div>
-                <Label
-                  htmlFor={`social${index}Profile`}
-                  className="text-sm text-foreground"
-                >
+              <div className="space-y-1">
+                <Label htmlFor={`social${index}Profile`} className="text-sm text-foreground">
                   Profile URL
                 </Label>
                 <Input
@@ -164,17 +158,11 @@ export default function SignatureForm({
                   type="url"
                   placeholder="https://linkedin.com/in/username"
                   value={icon.profileUrl}
-                  onChange={(e) =>
-                    onSocialChange(index, 'profileUrl', e.target.value)
-                  }
-                  className="mt-1"
+                  onChange={(e) => onSocialChange(index, 'profileUrl', e.target.value)}
                 />
               </div>
-              <div>
-                <Label
-                  htmlFor={`social${index}Icon`}
-                  className="text-sm text-foreground"
-                >
+              <div className="space-y-1">
+                <Label htmlFor={`social${index}Icon`} className="text-sm text-foreground">
                   Icon Image URL
                 </Label>
                 <Input
@@ -183,7 +171,6 @@ export default function SignatureForm({
                   placeholder="https://example.com/icon.png"
                   value={icon.iconUrl}
                   onChange={(e) => onSocialChange(index, 'iconUrl', e.target.value)}
-                  className="mt-1"
                 />
               </div>
             </div>
