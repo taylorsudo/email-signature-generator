@@ -44,10 +44,11 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
               )}
               <td
                 style={{
-                  verticalAlign: 'top',
+                  verticalAlign: 'middle',
                   borderLeft: formData.logo ? '1px solid #ddd' : 'none',
                   paddingLeft: formData.logo ? '20px' : '0px',
                 }}
+                valign="middle"
               >
                 <div
                   style={{
@@ -90,7 +91,7 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
                   </div>
                 )}
                 {websiteUrl && (
-                  <div style={{ marginBottom: '12px' }}>
+                  <div style={{ marginBottom: '8px' }}>
                     <a
                       href={websiteUrl}
                       style={{ color: '#0066cc', textDecoration: 'none', fontSize: '13px' }}
