@@ -2,6 +2,7 @@
 
 import { forwardRef } from 'react'
 import { SocialIcon } from '@/lib/types'
+import { ensureHttpsUrl, stripUrlProtocol } from '@/lib/utils'
 
 interface SignaturePreviewProps {
   formData: {
@@ -17,6 +18,9 @@ interface SignaturePreviewProps {
 
 const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
   ({ formData }, ref) => {
+    const websiteUrl = ensureHttpsUrl(formData.website)
+    const websiteText = stripUrlProtocol(formData.website)
+
     return (
       <div
         ref={ref}
@@ -52,7 +56,7 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
                     marginBottom: formData.title ? '0px' : '8px',
                   }}
                 >
-                  {formData.name || 'Your Name'}
+                  {formData.name || 'John Doe'}
                 </div>
                 {formData.title && (
                   <div
@@ -71,7 +75,7 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
                       href={`mailto:${formData.email}`}
                       style={{ color: '#0066cc', textDecoration: 'none', fontSize: '13px' }}
                     >
-                      {formData.email}
+                      {formData.email || 'john@example.com'}
                     </a>
                   </div>
                 )}
@@ -85,13 +89,13 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
                     </a>
                   </div>
                 )}
-                {formData.website && (
+                {websiteUrl && (
                   <div style={{ marginBottom: '12px' }}>
                     <a
-                      href={formData.website}
+                      href={websiteUrl}
                       style={{ color: '#0066cc', textDecoration: 'none', fontSize: '13px' }}
                     >
-                      {formData.website}
+                      {websiteText || websiteUrl}
                     </a>
                   </div>
                 )}
