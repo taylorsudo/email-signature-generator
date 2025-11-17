@@ -10,19 +10,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/images/favicon.png',
+        url: '/email-signature-generator/images/favicon.png',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/images/favicon.png',
+        url: '/email-signature-generator/images/favicon.png',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/images/favicon.png',
+        url: '/email-signature-generator/images/favicon.png',
         type: 'image/png',
       },
     ],
-    apple: '/images/favicon.png',
+    apple: '/email-signature-generator/images/favicon.png',
   },
 }
 
