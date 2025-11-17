@@ -35,9 +35,9 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
                   valign="middle"
                 >
                   <img
-                    src={formData.logo || '/placeholder.svg'}
+                    src={formData.logo}
                     alt="Logo"
-                    style={{ width: '80px', height: 'auto', display: 'block' }}
+                    style={{ width: '60px', height: 'auto', display: 'block' }}
                     crossOrigin="anonymous"
                   />
                 </td>
