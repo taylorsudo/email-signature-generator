@@ -75,7 +75,7 @@ const SignaturePreview = forwardRef<HTMLDivElement, SignaturePreviewProps>(
                       href={`mailto:${formData.email}`}
                       style={{ color: '#0066cc', textDecoration: 'none', fontSize: '13px' }}
                     >
-                      {formData.email || 'john@example.com'}
+                      {formData.email}
                     </a>
                   </div>
                 )}

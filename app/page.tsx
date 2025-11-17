@@ -7,6 +7,7 @@ import { Copy, Check } from 'lucide-react'
 import SignaturePreview from '@/components/signature-preview'
 import SignatureForm from '@/components/signature-form'
 import { SocialIcon } from '@/lib/types'
+import { ensureHttpsUrl } from '@/lib/utils'
 
 const createEmptySocialIcons = (): SocialIcon[] =>
   Array.from({ length: 3 }, () => ({
@@ -172,7 +173,7 @@ export default function Home() {
     setParam('title', formData.title)
     setParam('email', formData.email)
     setParam('phone', formData.phone)
-    setParam('website', formData.website)
+    setParam('website', ensureHttpsUrl(formData.website))
     setParam('logo', formData.logo)
 
     formData.socialIcons.forEach((icon, index) => {
@@ -215,7 +216,7 @@ export default function Home() {
             Email Signature Generator
           </h1>
           <p className="text-muted-foreground mb-3">
-            Create a professional email signature in seconds
+            Create a professional email signature in seconds. Free and open-source.
           </p>
           <div className="flex justify-center space-x-3">
             <a className="github-button" href="https://github.com/taylorsudo/email-signature-generator" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" aria-label="Star taylorsudo/email-signature-generator on GitHub">Star</a>
@@ -281,6 +282,25 @@ export default function Home() {
                 )}
               </Button>
             </div>
+            {/* Apple Mail Instructions */}
+            <Card className="mt-8 p-8 bg-card">
+              <h2 className="text-lg font-semibold text-foreground">
+                Adding a Signature to Apple Mail
+              </h2>
+              <p className="text-sm">
+                Adding images to a signature in Apple Mail can be a bit tricky. Use these steps to paste and assign the generated signature inside Apple Mail.
+              </p>
+              <ol className="list-decimal list-inside space-y-2 text-sm">
+                <li>Click <strong>Copy Signature</strong> above to put the HTML on your clipboard.</li>
+                <li>Open Apple Mail and go to <strong>Settings (⌘,)</strong> → <strong>Signatures</strong>.</li>
+                <li>Select the email account you want, then press <strong>+</strong> to create a new signature.</li>
+                <li>Paste (⌘V) the signature into the right-hand editor and <strong>uncheck</strong> “Always match my default message font.”</li>
+              </ol>
+              <img src="/email-signature-generator/images/apple-mail-signature.webp" alt="Apple Mail Signature" />
+              <p className="text-sm">
+                Images may not appear immediately in the preview, but they will appear in the final signature.
+              </p>
+            </Card>
           </div>
         </div>
       </div>

@@ -4,8 +4,8 @@ import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Email Signature Generator',
-  description: 'Create a professional email signature in seconds. Customize with your logo, social media links, and contact information.',
+  title: 'Free Email Signature Generator for Outlook, Gmail & Apple Mail',
+  description: 'Create a free professional email signature for Outlook, Gmail, Apple Mail and more in seconds. Customize with your logo, social media links, and contact information.',
   generator: 'v0.app',
   icons: {
     icon: [

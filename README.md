@@ -3,7 +3,7 @@
 A free and open-source email signature generator for teams that want a quick, consistent signature without paying for yet another SaaS.
 
 ## Features
-- Live preview with copy-to-clipboard support for rich HTML signatures
+- Live preview with copy-to-clipboard support for rich-text signatures
 - Support for logos, contact info, job titles, and social icons
 - Shareable URLs that pre-fill the form, great for onboarding
 - Fully client-side and deployable on Vercel (or any Next.js host)
@@ -27,4 +27,4 @@ npm run start
 Deploy to Vercel or copy the `.next` output to your preferred host.
 
 ## Contributing
-Questions, improvements, or bug fixes are all welcome—feel free to open an issue or make a pull request.
+Questions, improvements, or bug fixes are all welcome—feel free to open an issue or make a pull request. Instructions for additional email clients are most welcome.

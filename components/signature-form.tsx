@@ -48,7 +48,7 @@ export default function SignatureForm({
           {/* Name */}
           <div>
             <Label htmlFor="name" className="text-foreground">
-              Full Name *
+              Full Name
             </Label>
             <Input
               id="name"
@@ -78,7 +78,7 @@ export default function SignatureForm({
           {/* Email */}
           <div>
             <Label htmlFor="email" className="text-foreground">
-              Email *
+              Email
             </Label>
             <Input
               id="email"
@@ -112,8 +112,9 @@ export default function SignatureForm({
             </Label>
             <Input
               id="website"
-              type="url"
-              placeholder="https://example.com"
+              type="text"
+              inputMode="url"
+              placeholder="example.com"
               value={formData.website}
               onChange={(e) => onInputChange('website', e.target.value)}
               className="mt-1"
